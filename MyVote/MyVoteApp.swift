@@ -4,6 +4,21 @@
 //
 //  Created by Danielle Smith on 4/12/24.
 //
+//Plan: Start by investigating API
+//--DO you want multiple API's?
+//Learn how to make fetch request
+//Decide what you want included
+//--How do you want to organize it?
+//Make CoreData
+//--How will CoreData receive data?
+//Design app
+//Draw outline
+//Make and connect views
+//Fill in views
+//Stylize
+//How do you want it to update?
+//Have tested - Fix bugs
+//Publish
 
 import SwiftUI
 import SwiftData
@@ -12,7 +27,7 @@ import SwiftData
 struct MyVoteApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Candidate.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

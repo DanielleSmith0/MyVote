@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */; };
 		CDBF172C2BC9B2BF00B18652 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172B2BC9B2BF00B18652 /* ContentView.swift */; };
-		CDBF172E2BC9B2BF00B18652 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172D2BC9B2BF00B18652 /* Item.swift */; };
+		CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172D2BC9B2BF00B18652 /* Candidate.swift */; };
 		CDBF17302BC9B2C000B18652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF172F2BC9B2C000B18652 /* Assets.xcassets */; };
 		CDBF17332BC9B2C000B18652 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		CDBF17262BC9B2BF00B18652 /* MyVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteApp.swift; sourceTree = "<group>"; };
 		CDBF172B2BC9B2BF00B18652 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CDBF172D2BC9B2BF00B18652 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CDBF172D2BC9B2BF00B18652 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		CDBF172F2BC9B2C000B18652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,7 +55,7 @@
 			children = (
 				CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */,
 				CDBF172B2BC9B2BF00B18652 /* ContentView.swift */,
-				CDBF172D2BC9B2BF00B18652 /* Item.swift */,
+				CDBF172D2BC9B2BF00B18652 /* Candidate.swift */,
 				CDBF172F2BC9B2C000B18652 /* Assets.xcassets */,
 				CDBF17312BC9B2C000B18652 /* Preview Content */,
 			);
@@ -141,7 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDBF172C2BC9B2BF00B18652 /* ContentView.swift in Sources */,
-				CDBF172E2BC9B2BF00B18652 /* Item.swift in Sources */,
+				CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */,
 				CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
