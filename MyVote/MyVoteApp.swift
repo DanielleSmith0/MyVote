@@ -10,6 +10,7 @@
 //Decide what you want included
 //--How do you want to organize it?
 //Make CoreData
+//--Might need AWS or server, so it can be updated weekly without the app needing to be updated.
 //--How will CoreData receive data?
 //Design app
 //Draw outline
@@ -21,27 +22,13 @@
 //Publish
 
 import SwiftUI
-import SwiftData
 
 @main
+
 struct MyVoteApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Candidate.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
     }
 }
