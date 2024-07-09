@@ -21,6 +21,8 @@
 //Have tested - Fix bugs
 //Publish
 
+//Add-ons. Should I make a favorites list?
+
 import SwiftUI
 
 @main

@@ -11,20 +11,31 @@ struct ContentView: View {
     @StateObject private var viewModel = NamesViewModel()
     
     var body: some View {
-        VStack {
-            Button(action: {
-                viewModel.fetchNames()
-            }) {
-                Text("Fetch Names")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.red)
-                    .cornerRadius(8)
+        NavigationView {
+            VStack {
+                Button(action: {
+                    viewModel.fetchNames()
+                }) {
+                    Text("Fetch Names")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.red)
+                        .cornerRadius(8)
+                }
+                List(viewModel.names, id: \.name) {
+                    candidate in NavigationLink(destination: CanInfoView(candidate: candidate)) {
+                        Text(candidate.name)
+                    }
+                }
             }
-            List(viewModel.names, id: \.self) {
-                name in Text(name)
-            }
+            .padding()
+            .navigationTitle("Candidates")
         }
-        .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
