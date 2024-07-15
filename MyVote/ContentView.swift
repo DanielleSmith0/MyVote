@@ -14,16 +14,16 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Button(action: {
-                    viewModel.fetchNames()
+                    viewModel.fetchCandidateNames()
                 }) {
-                    Text("Fetch Names")
+                    Text("Fetch Name List")
                         .padding()
                         .background(Color.blue)
-                        .foregroundColor(.red)
+                        .foregroundColor(.white)
                         .cornerRadius(8)
                 }
-                List(viewModel.names, id: \.name) {
-                    candidate in NavigationLink(destination: CanInfoView(candidate: candidate)) {
+                List(viewModel.names, id: \.candidate_id) {
+                    candidate in NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id)) {
                         Text(candidate.name)
                     }
                 }

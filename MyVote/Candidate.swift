@@ -1,27 +1,29 @@
-////
-////  Item.swift
-////  MyVote
-////
-////  Created by Danielle Smith on 4/12/24.
-////
 //
-//import Foundation
-//import SwiftData
+//  Item.swift
+//  MyVote
 //
-//@Model
-//class Candidate {
-//    var name: String
-//    var running: String
-//    var platform: String
-//    var party: String
-//    var votingHistory: String
-//    
-//    init(name: String, running: String, platform: String, party: String, votingHistory: String) {
-//        self.name = name
-//        self.running = running
-//        self.platform = platform
-//        self.party = party
-//        self.votingHistory = votingHistory
-//    }
+//  Created by Danielle Smith on 4/12/24.
+//
+
+import Foundation
+
+//For accepting just dictionaries of candidates name with their id's from server
+struct CandidateName: Codable, Hashable {
+    let name: String
+    let candidate_id: Int
+}
+
+//Struct shows dictionary of full information for individual candidates that is expected to be received from server.
+
+//struct Candidate: Codable, Hashable {
+//    let name: String
+//    let party: String
+//    let traits: [Trait]
 //}
-//
+//Struct for candidate's traits displayed in CanInfoView
+struct Trait: Codable, Hashable, Identifiable {
+    var id = UUID()
+    let title: String
+    let description: String
+}
+

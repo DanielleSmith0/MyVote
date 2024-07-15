@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD870CF82C2F336C003DB2D2 /* CanInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD870CF72C2F336C003DB2D2 /* CanInfoView.swift */; };
+		CD870CF82C2F336C003DB2D2 /* CandidateInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */; };
 		CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */; };
 		CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172D2BC9B2BF00B18652 /* Candidate.swift */; };
 		CDBF17302BC9B2C000B18652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF172F2BC9B2C000B18652 /* Assets.xcassets */; };
 		CDBF17332BC9B2C000B18652 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */; };
 		CDE370BE2C24DBDD00A801CB /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE370BD2C24DBDD00A801CB /* ClientViewModel.swift */; };
-		CDE370C42C2B2B5C00A801CB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE370C32C2B2B5C00A801CB /* View.swift */; };
+		CDE370C42C2B2B5C00A801CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE370C32C2B2B5C00A801CB /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD870CF72C2F336C003DB2D2 /* CanInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanInfoView.swift; sourceTree = "<group>"; };
+		CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateInfoView.swift; sourceTree = "<group>"; };
 		CDBF17262BC9B2BF00B18652 /* MyVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteApp.swift; sourceTree = "<group>"; };
 		CDBF172D2BC9B2BF00B18652 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		CDBF172F2BC9B2C000B18652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CDE370BD2C24DBDD00A801CB /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
-		CDE370C32C2B2B5C00A801CB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		CDE370C32C2B2B5C00A801CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 				CDE370BD2C24DBDD00A801CB /* ClientViewModel.swift */,
 				CDBF172F2BC9B2C000B18652 /* Assets.xcassets */,
 				CDBF17312BC9B2C000B18652 /* Preview Content */,
-				CDE370C32C2B2B5C00A801CB /* View.swift */,
-				CD870CF72C2F336C003DB2D2 /* CanInfoView.swift */,
+				CDE370C32C2B2B5C00A801CB /* ContentView.swift */,
+				CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */,
 			);
 			path = MyVote;
 			sourceTree = "<group>";
@@ -146,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE370C42C2B2B5C00A801CB /* View.swift in Sources */,
-				CD870CF82C2F336C003DB2D2 /* CanInfoView.swift in Sources */,
+				CDE370C42C2B2B5C00A801CB /* ContentView.swift in Sources */,
+				CD870CF82C2F336C003DB2D2 /* CandidateInfoView.swift in Sources */,
 				CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */,
 				CDE370BE2C24DBDD00A801CB /* ClientViewModel.swift in Sources */,
 				CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */,

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct CanInfoView: View {
-    let candidate: Candidate
+
+struct CandidateInfoView: View {
+    let candidateID: Int
     @State private var isExpanded = Array(repeating: false, count: 3)
     
     var body: some View {
@@ -19,7 +20,7 @@ struct CanInfoView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100)
-                    .padding()
+                    .padding(.trailing)
                 //Stack of candidate's name and party
                 VStack (alignment: .leading) {
                     Text("\(candidate.name)")
@@ -27,9 +28,8 @@ struct CanInfoView: View {
                         .padding(.bottom, 5)
                     Text("Party")
                         .padding(.bottom, 5)
-                    Spacer()//pushes content upwards since it's a VStack.
                 }
-                .padding()
+                Spacer()//pushes content upwards since it's a VStack.
             }
             .padding(.horizontal)
             //Expandable lists of traits
@@ -46,17 +46,12 @@ struct CanInfoView: View {
                     }
                 )
                 .padding(.horizontal)
-//                .padding(.vertical, 5)
+                .padding(.vertical, 5)
             }
             Spacer()
         }
         .padding()
     }
-}
-struct Trait: Codable, Hashable, Identifiable {
-    var id = UUID()
-    let title: String
-    let description: String
 }
 
 struct CanInfoView_Previews: PreviewProvider {
