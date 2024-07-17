@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = NamesViewModel()
+    @StateObject private var viewModel = ClientViewModel()
     
     var body: some View {
         NavigationView {
@@ -16,15 +16,15 @@ struct ContentView: View {
                 Button(action: {
                     viewModel.fetchCandidateNames()
                 }) {
-                    Text("Fetch Name List")
+                    Text("Fetch Names")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
-                List(viewModel.names, id: \.candidate_id) {
-                    candidate in NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id)) {
-                        Text(candidate.name)
+                List(viewModel.candidates, id: \.candidate_id) {
+                    candidate in NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id, viewModel: viewModel)) {
+                            Text(candidate.name)
                     }
                 }
             }

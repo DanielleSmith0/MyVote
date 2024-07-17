@@ -8,9 +8,10 @@
 import Foundation
 import Combine
 
-class NamesViewModel: ObservableObject {
+class ClientViewModel: ObservableObject {
     //Published makes it so the variable is observable, so if names gets updated, the UI can adapt accordingly.
-    @Published var names: [CandidateName] = []
+    @Published var candidates: [CandidateNameID] = []
+    @Published var candidateDetail: Candidate?
     
     func fetchCandidateNames() {
         guard let serverUrl = URL(string: "http://192.168.1.68:5000/name_id") else {
@@ -25,8 +26,8 @@ class NamesViewModel: ObservableObject {
                 return
             }
             
-            // The response is just metadata, such as a status code to confirm if it worked.
-            guard let htttpResponse = response as? HTTPURLResponse, htttpResponse.statusCode == 200 else {
+            // The response is just metadata, such as a status code to confirm if it worked and is 200.
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 print("Invalid response or status code not 200")
                 return
             }
@@ -34,10 +35,10 @@ class NamesViewModel: ObservableObject {
             //Checks for valid data
             if let data = data {
                 do {
-                    let names = try JSONDecoder().decode([CandidateName].self, from: data)
+                    let names = try JSONDecoder().decode([CandidateNameID].self, from: data)
                     //Updates the names property on the main thread. This ensures the UI is updated safely since UI updates must occur on the main thread.
                     DispatchQueue.main.async {
-                        self.names = names
+                        self.candidates = names
                     }
                 } catch {
                     print("Failed to decode response data: \(error)")
@@ -49,7 +50,36 @@ class NamesViewModel: ObservableObject {
         task.resume()
     }
     
-    func fetchCandidateInfo(){
+    func fetchCandidateInfo(candidateID: Int){
+        guard let serverUrl = URL(string: "http://192.168.1.68:5000/get_candidate?candidate_id=\(candidateID)") else {
+            print("Invalid URL")
+            return
+        }
         
+        let task = URLSession.shared.dataTask(with: serverUrl) { data, response, error in
+            if let error = error {
+                print("Could not connect to server \(error)")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print ("Invalid response or status code not 200")
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let detail = try JSONDecoder().decode(Candidate.self, from: data)
+                    DispatchQueue.main.async {
+                        self.candidateDetail = detail
+                    }
+                } catch {
+                    print("Failed to decode response data: \(error)")
+                }
+            } else {
+                print("Failed to get the response data")
+            }
+        }
+        task.resume()
     }
 }

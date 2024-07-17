@@ -8,18 +8,18 @@
 import Foundation
 
 //For accepting just dictionaries of candidates name with their id's from server
-struct CandidateName: Codable, Hashable {
+struct CandidateNameID: Codable, Hashable {
     let name: String
     let candidate_id: Int
 }
 
 //Struct shows dictionary of full information for individual candidates that is expected to be received from server.
 
-//struct Candidate: Codable, Hashable {
-//    let name: String
-//    let party: String
-//    let traits: [Trait]
-//}
+struct Candidate: Codable, Hashable {
+    let name: String
+    let candidate_id: Int
+    let traits: [Trait]?
+}
 //Struct for candidate's traits displayed in CanInfoView
 struct Trait: Codable, Hashable, Identifiable {
     var id = UUID()
