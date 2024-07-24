@@ -12,16 +12,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Button(action: {
-                    viewModel.fetchCandidateNames()
-                }) {
-                    Text("Fetch Names")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
+            VStack() {
+//                Button(action: {
+//                    viewModel.fetchCandidateNames()
+//                }) {
+//                    Text("Fetch Names")
+//                        .padding()
+//                        .background(Color.blue)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(8)
+//                }
                 List(viewModel.candidates, id: \.candidate_id) {
                     candidate in NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id, viewModel: viewModel)) {
                             Text(candidate.name)
@@ -30,6 +30,11 @@ struct ContentView: View {
             }
             .padding()
             .navigationTitle("Candidates")
+            .onAppear {
+                viewModel.fetchCandidateNames()
+                viewModel.resetCandidateInfo()
+                
+            }
         }
     }
 }

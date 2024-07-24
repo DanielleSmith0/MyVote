@@ -51,12 +51,16 @@ class ClientViewModel: ObservableObject {
     }
     
     func fetchCandidateInfo(candidateID: Int){
+        DispatchQueue.main.async {
+            self.candidateDetail = nil
+        }
+        
         guard let serverUrl = URL(string: "http://192.168.1.68:5000/get_candidate?candidate_id=\(candidateID)") else {
             print("Invalid URL")
             return
         }
         
-        let task = URLSession.shared.dataTask(with: serverUrl) { data, response, error in
+        let task = URLSession.shared.dataTask(with: serverUrl) { [weak self] data, response, error in
             if let error = error {
                 print("Could not connect to server \(error)")
                 return
@@ -69,9 +73,9 @@ class ClientViewModel: ObservableObject {
             
             if let data = data {
                 do {
-                    let detail = try JSONDecoder().decode(Candidate.self, from: data)
+                    let candidateDetail = try JSONDecoder().decode(Candidate.self, from: data)
                     DispatchQueue.main.async {
-                        self.candidateDetail = detail
+                        self?.candidateDetail = candidateDetail
                     }
                 } catch {
                     print("Failed to decode response data: \(error)")
@@ -81,5 +85,17 @@ class ClientViewModel: ObservableObject {
             }
         }
         task.resume()
+    }
+    
+    func resetCandidateInfo() {
+        self.candidateDetail = nil
+    }
+    // For making sure name is displayed in candidateInfoView as "First Last" instead of "Last, First"
+    func nameOrder(_ candidateName: String) -> (String) {
+        let parts = candidateName.split(separator: ",")
+        let firstName = parts[1].trimmingCharacters(in: .whitespaces)
+        let lastName = (parts[0].trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ""))
+        let correctedName = "\(firstName) " + "\(lastName)"
+        return correctedName
     }
 }
