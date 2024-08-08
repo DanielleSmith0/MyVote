@@ -11,7 +11,7 @@ import Combine
 class ClientViewModel: ObservableObject {
     //Published makes it so the variable is observable, so if names gets updated, the UI can adapt accordingly.
     @Published var candidates: [CandidateNameID] = []
-    @Published var candidateDetail: Candidate?
+    @Published var candidateDetail: Candidate? = nil
     
     func fetchCandidateNames() {
         guard let serverUrl = URL(string: "http://192.168.1.68:5000/name_id") else {
@@ -50,27 +50,27 @@ class ClientViewModel: ObservableObject {
         task.resume()
     }
     
-    func fetchCandidateInfo(candidateID: Int){
+    func fetchCandidateInfo(candidateID: String) {
         DispatchQueue.main.async {
             self.candidateDetail = nil
         }
-        
+
         guard let serverUrl = URL(string: "http://192.168.1.68:5000/get_candidate?candidate_id=\(candidateID)") else {
             print("Invalid URL")
             return
         }
-        
+
         let task = URLSession.shared.dataTask(with: serverUrl) { [weak self] data, response, error in
             if let error = error {
                 print("Could not connect to server \(error)")
                 return
             }
-            
+
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                print ("Invalid response or status code not 200")
+                print("Invalid response or status code not 200")
                 return
             }
-            
+
             if let data = data {
                 do {
                     let candidateDetail = try JSONDecoder().decode(Candidate.self, from: data)
@@ -86,16 +86,22 @@ class ClientViewModel: ObservableObject {
         }
         task.resume()
     }
+
     
     func resetCandidateInfo() {
-        self.candidateDetail = nil
+        candidateDetail = nil
     }
     // For making sure name is displayed in candidateInfoView as "First Last" instead of "Last, First"
     func nameOrder(_ candidateName: String) -> (String) {
-        let parts = candidateName.split(separator: ",")
-        let firstName = parts[1].trimmingCharacters(in: .whitespaces)
-        let lastName = (parts[0].trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ""))
-        let correctedName = "\(firstName) " + "\(lastName)"
-        return correctedName
+        if candidateName.contains(",") {
+            let parts = candidateName.split(separator: ",")
+            let firstName = parts[1].trimmingCharacters(in: .whitespaces)
+            let lastName = (parts[0].trimmingCharacters(in: .whitespaces).replacingOccurrences(of: ",", with: ""))
+            let correctedName = "\(firstName) " + "\(lastName)"
+            //THis is where you add another if statement for containing words like Jr.
+            return correctedName
+        } else {
+            return candidateName
+        }
     }
 }
