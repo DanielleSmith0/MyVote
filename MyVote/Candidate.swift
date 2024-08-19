@@ -20,12 +20,12 @@ struct Candidate: Codable, Hashable {
     let candidate_id: String
     let party: String
     let age: Int
-    let categories: [TraitCategory]?
+    let categories: [Category]?
     let state: String?
     let incumbant: Bool?
 }
 
-struct TraitCategory: Codable, Hashable {
+struct Category: Codable, Hashable {
     let title: String
     let traits: [Trait]
 }

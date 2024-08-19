@@ -23,8 +23,6 @@ struct ContentView: View {
             .navigationTitle("Candidates")
             .onAppear {
                 viewModel.fetchCandidateNames()
-                viewModel.resetCandidateInfo()
-                
             }
         }
     }

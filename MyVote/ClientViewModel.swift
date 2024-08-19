@@ -54,23 +54,23 @@ class ClientViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.candidateDetail = nil
         }
-
+        
         guard let serverUrl = URL(string: "http://192.168.1.68:5000/get_candidate?candidate_id=\(candidateID)") else {
             print("Invalid URL")
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: serverUrl) { [weak self] data, response, error in
             if let error = error {
                 print("Could not connect to server \(error)")
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 print("Invalid response or status code not 200")
                 return
             }
-
+            
             if let data = data {
                 do {
                     let candidateDetail = try JSONDecoder().decode(Candidate.self, from: data)
@@ -83,7 +83,7 @@ class ClientViewModel: ObservableObject {
             } else {
                 print("Failed to get the response data")
             }
-        }
+    }
         task.resume()
     }
 
@@ -91,6 +91,7 @@ class ClientViewModel: ObservableObject {
     func resetCandidateInfo() {
         candidateDetail = nil
     }
+    
     // For making sure name is displayed in candidateInfoView as "First Last" instead of "Last, First"
     func nameOrder(_ candidateName: String) -> (String) {
         if candidateName.contains(",") {
