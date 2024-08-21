@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD870CF82C2F336C003DB2D2 /* CandidateInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */; };
 		CDAF909A2C6ECC770050555A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF90992C6ECC770050555A /* Colors.swift */; };
+		CDAF909C2C73DE700050555A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAF909B2C73DE700050555A /* WelcomeView.swift */; };
 		CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */; };
 		CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172D2BC9B2BF00B18652 /* Candidate.swift */; };
 		CDBF17302BC9B2C000B18652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF172F2BC9B2C000B18652 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateInfoView.swift; sourceTree = "<group>"; };
 		CDAF90992C6ECC770050555A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CDAF909B2C73DE700050555A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CDBF17262BC9B2BF00B18652 /* MyVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBF17292BC9B2BF00B18652 /* MyVoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoteApp.swift; sourceTree = "<group>"; };
 		CDBF172D2BC9B2BF00B18652 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				CDAF90992C6ECC770050555A /* Colors.swift */,
 				CDBF172F2BC9B2C000B18652 /* Assets.xcassets */,
 				CDBF17312BC9B2C000B18652 /* Preview Content */,
+				CDAF909B2C73DE700050555A /* WelcomeView.swift */,
 				CDE370C32C2B2B5C00A801CB /* ContentView.swift */,
 				CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */,
 			);
@@ -155,6 +158,7 @@
 				CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */,
 				CDE370BE2C24DBDD00A801CB /* ClientViewModel.swift in Sources */,
 				CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */,
+				CDAF909C2C73DE700050555A /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

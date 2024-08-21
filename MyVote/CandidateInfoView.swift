@@ -50,6 +50,13 @@ struct CandidateInfoView: View {
                 }
             }
         }
+        .background(
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+//                .frame(maxWidth: .infinity, maxHeight: 500)
+        )
         .onAppear{
                 viewModel.fetchCandidateInfo(candidateID: candidateID)
         }
@@ -73,15 +80,18 @@ struct CandidateHeaderView: View {
                 Text(candidateFullName)
                     .font(.title)
                     .fontWeight(.medium)
+                    .foregroundStyle(Color.white)
                     .multilineTextAlignment(.leading)
                     .padding(.bottom, 5)
                 Text(party)
                     .padding(.bottom, 5)
+                    .foregroundStyle(Color.white)
             }
             Spacer()//pushes content upwards since it's a VStack.
         }
         .padding(.horizontal)
-        .padding(.vertical)
+        .offset(x: 0, y: -30)
+        .edgesIgnoringSafeArea([.top])
     }
 }
 
