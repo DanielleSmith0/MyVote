@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @State private var navigateToContentView = false
+    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack (alignment: .center, spacing: 20) {
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
@@ -34,8 +36,9 @@ struct WelcomeView: View {
                 .padding(.horizontal)
                 
                 Spacer()
-                
-                NavigationLink(destination: ContentView()) {
+  
+                Button (action: {navigateToContentView = true})
+                {
                     Text("See Candidates")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -49,7 +52,9 @@ struct WelcomeView: View {
                 Spacer()
             }
             .padding()
-//            .navigationBarHidden(true)
+            .navigationDestination(isPresented: $navigateToContentView){
+                ContentView()
+            }
         }
     }
 }

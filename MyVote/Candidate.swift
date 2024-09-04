@@ -11,6 +11,7 @@ import Foundation
 struct CandidateNameID: Codable, Hashable {
     let name: String
     let candidate_id: String
+    let party_full: String?
 }
 
 //Struct shows dictionary of full information for individual candidates that is expected to be received from server.

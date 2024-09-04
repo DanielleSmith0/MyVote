@@ -14,6 +14,7 @@
 		CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBF172D2BC9B2BF00B18652 /* Candidate.swift */; };
 		CDBF17302BC9B2C000B18652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF172F2BC9B2C000B18652 /* Assets.xcassets */; };
 		CDBF17332BC9B2C000B18652 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */; };
+		CDC05ADF2C87D43300F1AB8D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC05ADE2C87D43300F1AB8D /* LoadingView.swift */; };
 		CDE370BE2C24DBDD00A801CB /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE370BD2C24DBDD00A801CB /* ClientViewModel.swift */; };
 		CDE370C42C2B2B5C00A801CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE370C32C2B2B5C00A801CB /* ContentView.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		CDBF172D2BC9B2BF00B18652 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		CDBF172F2BC9B2C000B18652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDBF17322BC9B2C000B18652 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CDC05ADE2C87D43300F1AB8D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CDE370BD2C24DBDD00A801CB /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		CDE370C32C2B2B5C00A801CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				CDAF90992C6ECC770050555A /* Colors.swift */,
 				CDBF172F2BC9B2C000B18652 /* Assets.xcassets */,
 				CDBF17312BC9B2C000B18652 /* Preview Content */,
+				CDC05ADE2C87D43300F1AB8D /* LoadingView.swift */,
 				CDAF909B2C73DE700050555A /* WelcomeView.swift */,
 				CDE370C32C2B2B5C00A801CB /* ContentView.swift */,
 				CD870CF72C2F336C003DB2D2 /* CandidateInfoView.swift */,
@@ -157,6 +160,7 @@
 				CD870CF82C2F336C003DB2D2 /* CandidateInfoView.swift in Sources */,
 				CDBF172E2BC9B2BF00B18652 /* Candidate.swift in Sources */,
 				CDE370BE2C24DBDD00A801CB /* ClientViewModel.swift in Sources */,
+				CDC05ADF2C87D43300F1AB8D /* LoadingView.swift in Sources */,
 				CDBF172A2BC9B2BF00B18652 /* MyVoteApp.swift in Sources */,
 				CDAF909C2C73DE700050555A /* WelcomeView.swift in Sources */,
 			);

@@ -89,8 +89,9 @@ struct CandidateHeaderView: View {
             }
             Spacer()//pushes content upwards since it's a VStack.
         }
+        .padding(.bottom, 20)
         .padding(.horizontal)
-        .offset(x: 0, y: -30)
+//        .offset(x: 0, y: -30)
         .edgesIgnoringSafeArea([.top])
     }
 }

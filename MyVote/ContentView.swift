@@ -10,12 +10,30 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ClientViewModel()
     
+    private var groupedCandidates: [String: [CandidateNameID]]{
+        Dictionary<String, [CandidateNameID]>(grouping: viewModel.candidates, by: {(candidate: CandidateNameID) -> String in
+            candidate.party_full ?? "UKNOWN PARTY"
+        })
+    }
+    
     var body: some View {
         NavigationView {
             VStack() {
-                List(viewModel.candidates, id: \.candidate_id) {
-                    candidate in NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id, viewModel: viewModel)) {
-                            Text(candidate.name)
+                List{
+                    ForEach (groupedCandidates.keys.sorted(), id: \.self) { party in
+                        DisclosureGroup(
+                            content: {
+                                ForEach(groupedCandidates[party]!, id: \.candidate_id) { candidate in
+                                    NavigationLink(destination: CandidateInfoView(candidateID: candidate.candidate_id, viewModel: viewModel)) {
+                                        Text(candidate.name)
+                                    }
+                                }
+                            },
+                            label: {
+                                Text(party)
+                                    .foregroundStyle(partyColor(party))
+                            }
+                        )
                     }
                 }
             }
@@ -26,8 +44,21 @@ struct ContentView: View {
             }
         }
     }
+    private func partyColor(_ party: String) -> Color {
+        switch party {
+        case "DEMOCRATIC PARTY":
+            return .blue
+        case "REPUBLICAN PARTY":
+            return .red
+        case "GREEN PARTY":
+            return .green
+        case "SOCIALIST EQUALITY PARTY":
+            return .purple
+        default:
+            return .yellow
+        }
+    }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
